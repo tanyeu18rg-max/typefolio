@@ -36,6 +36,22 @@ export function initMotion(options: MotionOptions): void {
   document.documentElement.classList.add('motion-on');
   gsap.registerPlugin(ScrollTrigger);
 
+  // ── Percentage-transform footgun guard ────────────────────────────────
+  // globals.css pre-hides kinetic lines with `transform: translateY(115%)`.
+  // getComputedStyle resolves that percentage into PIXELS in the matrix, so
+  // the first time GSAP touches an element it parses a px `y` offset — NOT
+  // yPercent. The fromTo tweens below only animate yPercent, which would
+  // leave that parsed px offset in place forever: masked lines would end up
+  // below their overflow-hidden masks (invisible, this actually shipped once)
+  // and unmasked elements would sit ~115% of their height below their
+  // natural position, overlapping the content beneath them. Zero the px
+  // component up front so every reveal below runs purely in yPercent and
+  // lands exactly on the natural position.
+  const kinetic = document.querySelectorAll<HTMLElement>(
+    '[data-motion="hero-line"], [data-motion="stacked-line"]',
+  );
+  gsap.set(kinetic, { y: 0, yPercent: 115 });
+
   // Hero: staggered reveal on load.
   document.querySelectorAll<HTMLElement>('[data-motion="hero-line"]').forEach((el, index) => {
     gsap.fromTo(

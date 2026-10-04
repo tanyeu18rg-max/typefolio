@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+
+## [0.1.1] - 2026-10-05
+
+### Fixed
+- Motion end-state bug: `globals.css` pre-hides kinetic lines with
+  `transform: translateY(115%)`, which `getComputedStyle` resolves to pixels —
+  GSAP parsed that as a px `y` offset, and since the reveals only animate
+  `yPercent`, every reveal finished ~115% of the element's height below its
+  natural position. Masked headlines (hero, identity, manifesto) stayed
+  invisible inside their overflow-hidden masks; unmasked elements overlapped
+  the content beneath them. `initMotion` now zeroes the parsed px component up
+  front (`gsap.set(els, { y: 0, yPercent: 115 })`) so reveals land exactly on
+  the natural position. Verified section-by-section in headless Chromium:
+  all 19 animated elements end at `translateY(0)`.
+
+### Added
+- `src/lib/__tests__/motion.test.ts`: regression test pinning the guard —
+  with GSAP mocked, asserts `gsap.set` zeroes `{ y: 0, yPercent: 115 }` on
+  kinetic elements before any `fromTo` runs, plus no-op behavior when motion
+  is disabled or `prefers-reduced-motion` matches.
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.1.0] - 2026-10-05
