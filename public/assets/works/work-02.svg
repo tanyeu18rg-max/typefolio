@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Field Notes — placeholder cover">
+  <rect width="800" height="600" fill="#0F1E14"/>
+  <circle cx="339" cy="430" r="183" fill="#EAE3CF" opacity="0.92"/>
+  <rect x="411" y="86" width="279" height="36" fill="#EAE3CF" opacity="0.68"/>
+  <rect x="329" y="242" width="420" height="31" fill="#EAE3CF" opacity="0.29"/>
+  <rect x="195" y="393" width="520" height="39" fill="#EAE3CF" opacity="0.33"/>
+  <circle cx="650" cy="150" r="64" fill="none" stroke="#EAE3CF" stroke-width="20"/>
+  <text x="744" y="560" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="210" fill="#EAE3CF">F</text>
+  <text x="48" y="548" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="6" fill="#EAE3CF" opacity="0.7">WORK 02</text>
+
+</svg>

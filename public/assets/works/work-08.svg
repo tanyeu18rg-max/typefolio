@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Drift Travel — placeholder cover">
+  <rect width="800" height="600" fill="#FAF9F7"/>
+  <circle cx="230" cy="123" r="184" fill="#171310" opacity="0.92"/>
+  <rect x="100" y="84" width="207" height="28" fill="#171310" opacity="0.57"/>
+  <rect x="376" y="238" width="206" height="20" fill="#171310" opacity="0.65"/>
+  <rect x="125" y="378" width="460" height="23" fill="#171310" opacity="0.49"/>
+  <circle cx="650" cy="150" r="64" fill="none" stroke="#171310" stroke-width="20"/>
+  <text x="744" y="560" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="210" fill="#171310">D</text>
+  <text x="48" y="548" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="6" fill="#171310" opacity="0.7">WORK 08</text>
+
+</svg>
